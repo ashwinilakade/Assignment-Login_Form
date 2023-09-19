@@ -25,9 +25,10 @@ const Login = () => {
     if (!emailValidator(input.email))
       return setErrorMessage('Please enter a valid email id');
 
-    if (!passwordValidator(input.password)) return setErrorMessage();
+    if (!passwordValidator(input.password))
+      return setErrorMessage('Please enter correct password.');
 
-    if (input.email !== 'admin@gmail.com' || input.password !== 'admin123')
+    if (input.email !== 'admin@gmail.com' || input.password !== 'Admin@123')
       return setErrorMessage('Invalid email or password');
 
     alert('Successfully logged in');
@@ -49,12 +50,12 @@ const Login = () => {
               onSubmit={formSubmitter}
             >
               <span className="login100-form-title p-b-49">Login</span>
-              {errorMessage.length > 0 && (
+              {errorMessage?.length > 0 && (
                 <div style={{marginBottom: '10px', color: 'red'}}>
                   {errorMessage}
                 </div>
               )}
-              {successMessage.length > 0 && (
+              {successMessage?.length > 0 && (
                 <div style={{marginBottom: '10px', color: 'green'}}>
                   {successMessage}
                 </div>
