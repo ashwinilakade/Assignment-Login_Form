@@ -27,7 +27,7 @@ const Login = () => {
 
     if (!passwordValidator(input.password)) return setErrorMessage();
 
-    if (input.email !== 'admin@a.com' || input.password !== 'Password@1')
+    if (input.email !== 'admin@gmail.com' || input.password !== 'admin123')
       return setErrorMessage('Invalid email or password');
 
     alert('Successfully logged in');
